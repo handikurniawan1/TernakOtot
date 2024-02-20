@@ -1,0 +1,821 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ‘Spartan’, sans-serif;
+}
+
+h4{
+    font-size: 20px;
+    color: #222;
+}
+
+
+p {
+    font-size: 16px;
+    color: #7c7c7c;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+    padding: 40px 91px;
+}
+
+.section-m1 {
+    margin: 0px 0;
+}
+
+button.normal{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+button.white{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #fff;
+    outline: none;
+    transition: 0.2s;
+}
+
+body{
+    width: 100%; 
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top:0;
+    left:0;
+
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active{
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom:-4px;
+    left: 20px;
+}
+
+#mobile{
+    display: none;
+    align-items: center;
+}
+
+#close{
+    display: none;
+}
+
+/*cart*/
+#dropdown {
+    width: 3em;
+    height: 3em;
+    margin-left: 24px;
+}
+
+#cart {
+    overflow-x: auto;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table img {
+    width: 70px;
+}
+
+#cart table td:nth-child(1),
+#cart table td:nth-child(2),
+#cart table td:nth-child(3),
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6),
+#cart table td:nth-child(7) {
+    width: 100%;
+    text-align: center;
+}
+
+#cart table td:nth-child(5) input,
+#cart table td:nth-child(6) input {
+    width: 70px;
+    padding: 10px 5px 10px 15px;
+}
+
+#cart table thead {
+    border: 2px solid #e2e9e1;
+}
+
+#cart table thead td {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 10%;
+}
+
+#cart table tbody td {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 10%;
+}
+
+#cart table tbody tr td {
+    padding-top: 15px;
+}
+
+#cart table tbody td {
+    font-size: 13px;
+}
+
+/* Responsive styles */
+
+@media screen and (max-width: 768px) {
+    #cart table thead td,
+    #cart table tbody td {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+
+    #cart table img {
+        width: 50px;
+    }
+
+    #cart table td:nth-child(5) input,
+    #cart table td:nth-child(6) select {
+        width: 50px;
+        padding: 5px;
+    }
+}
+@media (max-width: 600px) {
+    #cart table {
+      overflow-x: auto;
+    }
+  
+    #cart table tbody tr {
+      margin-bottom: 1rem;
+    }
+  
+    #cart table tbody td {
+      width: 100%;
+      padding: 0.5rem;
+    }
+  }
+
+
+/*cart-add*/
+#cart-add{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#coupon{
+    width: 50%;
+    margin-bottom:30px ;
+}
+#coupon h3,
+#subtotal h3{
+    margin-bottom:15px ;
+}
+#coupon input{
+    padding: 10px 20px;
+    outline: none;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #e2e9e1;
+}
+#coupon button, #subtotal button {
+    background-color: #088178;
+    color: #fff;
+    padding: 10px;
+}
+
+#subtotal {
+    width: 50%;
+    margin-bottom: 30px;
+    border: 1px solid #e2e9e1;
+    padding: 30px;
+}
+
+#subtotal table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+#subtotal table td{
+    width: 50%;
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 13px;
+
+}
+
+#newsletter{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url("../Image/banner/b14.png");
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #242424;
+}
+
+#newsletter h4{
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsletter p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #818ea0;
+}
+
+#newsletter p span{
+    color: #E77751;
+}
+
+#newsletter .form{
+    padding: 12px;
+    border-radius: 20px;
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input{
+    height: 2.525rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    outline: none;
+}
+
+#newsletter input::placeholder{
+    font-family:  ‘Spartan’, sans-serif;
+}
+
+#newsletter button{
+    border-radius: 20px;
+    background-color: #1f1f1f;
+    color: white;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 2.525rem;
+}
+
+#newsletter button:hover{
+    border-radius: 20px;
+    background-color: white;
+    color: #1f1f1f;
+}
+
+
+.input-group:hover .label, .input:focus {
+  color: #05060fc2;
+}
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow i{
+    color: #222;
+    cursor: pointer;
+    padding-right: 4px;
+}
+
+footer .install .row img{
+    border: 1px solid #5a5858;
+    border-radius: 6px;
+}
+
+footer .install img{
+    margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer a:hover{
+    color: #a5a5a5;
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width:799px) {
+    #cart table td:nth-child(1), #cart table td:nth-child(2), #cart table td:nth-child(3), #cart table td:nth-child(4), #cart table td:nth-child(5), #cart table td:nth-child(6), #cart table td:nth-child(7) {
+        width: 100px;
+        text-align: center;
+    }
+    .section-p1 {
+        padding: 40px 10px;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right:-300px;
+        height: 100vh;
+        width: 300px;
+        background-color: white;
+        box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    #navbar.active{
+        right: 0px;
+    }
+
+    #navbar li{
+        margin-bottom: 25px;
+    }
+
+    #mobile{
+        display: flex;
+        align-items: center;
+    }
+    #mobile i{
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    #close{
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    }
+
+    #lg-bag{
+        display: none;
+    }
+
+    #newsletter .form {
+        width: 70%;
+    }
+}
+
+@media (max-width:477px) {
+    .section-p1 {
+        padding: 20px;
+    }
+    #header {
+        padding: 10px 30px;
+    }
+    h2{
+        font-size: 38px;
+    }
+    h2{
+        font-size: 32px;
+    }
+    
+    #newsletter {
+        padding: 40px 20px;
+    }
+    #newsletter .form {
+        width: 100%;
+    }
+    footer .copyright {
+        text-align: start;
+    }
+    /*cart page*/
+    #cart-add {
+        flex-direction: column;
+    }
+    #coupon {
+        width:  100%;
+    }
+    #subtotal{
+        width: 100%;
+        padding: 20px;
+    }
+    #cart {
+        overflow-x: auto;
+    }
+}
+
+
+  h1 {
+    padding-left: 587px;
+    padding-top: 22px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#welcome_message {
+	width: 100%;
+	font-size: 10px;
+	padding: 12px;
+	background-color: rgba(104, 137, 154, 0.25);
+	color: #868f93;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+#menu {
+	width: 100%;
+	height: 70px;
+	border-top: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+}
+#menu .wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 1148px;
+	margin: 0 auto;
+}
+.menu_drawer {
+	height: 70px;
+	flex-grow: 1;
+	max-width: 162px;
+	display: flex;
+	align-items: center;
+}
+.menu_links {
+	height: 70px;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.menu_links ul {
+	display: flex;
+}
+.menu_links ul li {
+	list-style: none;
+	font-size: 12px;
+	color: #111111;
+	padding: 27px;
+	text-transform: uppercase;
+}
+.menu_icons {
+	height: 70px;
+	flex-grow: 1;
+	max-width: 162px;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+}
+.btn {
+	width: fit-content;
+	font-size: 12px;
+	text-transform: uppercase;
+	outline: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	text-align: center;
+    border-radius: 10px;
+}
+.btn_primary {
+	background-color: #111111;
+	color: #ffffff;
+	padding: 20px 60px;
+    margin-left: 20px;
+}
+.btn_outline {
+	border: 2px solid #ded3aa;
+	padding: 16px 48px;
+}
+.btn_outline_secondary {
+	border: 1px solid #e1e1e1;
+	padding: 20px 40px;
+	margin-left: 20px;
+}
+.btn_outline:hover {
+	background-color: #f5f5f5;
+}
+
+#product {
+	width: 1148px;
+	margin: 0 auto;
+	margin-top: 48px;
+	display: flex;
+}
+.product_images {
+	width: 657px;
+	min-width: 657px;
+	height: 600px;
+	background-color: #e1e1e1;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+    border-radius: 15px;
+}
+.product_images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.product_details {
+	flex-grow: 1;
+	padding-left: 28px;
+}
+.product_details h4 {
+	font-size: 24px;
+	font-weight: 600;
+	color: #111111;
+}
+.product_details p {
+	font-size: 14px;
+	color: #555555;
+	font-weight: 300;
+	margin-top: 20px;
+	line-height: 24px;
+}
+
+.product_details .about p span {
+	margin-left: 10px;
+}
+
+.product_details ul li {
+	font-size: 14px;
+	color: #555555;
+	font-weight: 300;
+	line-height: 24px;
+	margin-left: 14px;
+	margin-bottom: 1px; /* Mengurangi margin bawah */
+	list-style: none;
+}
+.product_details ul li::before {
+	content: "\2022";
+	/* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: #cccccc;
+	/* Change the color */
+	display: inline-block;
+	/* Needed to add space between the bullet and the text */
+	width: 1em;
+	/* Also needed for space (tweak if needed) */
+	margin-left: -1em;
+	/* Also needed for space (tweak if needed) */
+}
+.cta {
+	display: flex;
+	width: 100%;
+	margin: 40px 0;
+	align-items: center;
+	justify-content: center;
+}
+
+.cta .btn_primary:first-child {
+	margin-right: 80px;
+}
+
+
+/*input quantity*/
+.quantity-container {
+    display: flex;
+    align-items: center;
+    width: 181px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #fff;
+}
+  
+  .quantity-button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 12px;
+}
+  
+.quantity-value {
+    margin: 5px 21px;
+    margin-left: 28px;
+}
+  
+  .quantity-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+.plan-label {
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+  }
+  
+  .btn-group button {
+    flex-grow: 1;
+    font-size: 12px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-group button:hover {
+    background-color: #f5f5f5;
+    color: #111111;
+  }
+  
+  .btn-group button:first-child {
+    margin-right: 0px;
+  }
+  
+  /* Pilihan bulan aktif */
+  .btn-group button.active {
+    background-color: #111111;
+    color: #ffffff;
+  }
+
+
+
+  /* DROP DOWN PROFIL */
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 6%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+.sub-menu-wrap.open-wrap{
+    max-height: 400px;
+    margin-left: 120px;
+}
+
+.sub-menu{
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.user-info h3{
+    font-weight: 500;
+}
+
+.user-info img{
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 14px;
+}
+
+.sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0 ;
+}
+
+.sub-menu-link p{
+    width: 100%;
+}
+
+.sub-menu-link img{
+    width: 40px;
+    background: #e5e5e5; 
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link span{
+    font-size: 22px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span{
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+  
